@@ -2,8 +2,8 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0.2" default-locale="en-US" demote-non-dropping-particle="sort-only" page-range-format="expanded">
   <info>
     <title>Journal of Integrative Agriculture (JIA, custom)</title>
-    <id></id>
-    <link href="http://" rel="self"/>
+    <id>https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Journal of Integrative Agriculture</id>
+    <link href="https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Journal of Integrative Agriculture" rel="self"/>
     <category citation-format="author-date"/>
     <category field="biology"/>
     <issn>2095-3119</issn>
