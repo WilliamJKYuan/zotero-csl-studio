@@ -4,11 +4,15 @@
     <title>Journal of Integrative Agriculture (JIA, custom)</title>
     <id>https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Journal of Integrative Agriculture</id>
     <link href="https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Journal of Integrative Agriculture" rel="self"/>
+    <author>
+      <name>WilliamYuan</name>
+      <webpage>https://github.com/WilliamJKYuan</webpage>
+    </author>
     <category citation-format="author-date"/>
     <category field="biology"/>
     <issn>2095-3119</issn>
     <summary>Custom CSL style for Journal of Integrative Agriculture based on recent JIA reference examples and the author guide. Author-date citations; full journal titles; bibliography as: Author A, Author B. Year. Title. Journal, volume, pages/article number.</summary>
-    <updated>2026-06-06T00:00:00+00:00</updated>
+    <updated>2026-06-06T13:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
@@ -25,12 +29,15 @@
   <macro name="author-bib">
     <names variable="author">
       <name name-as-sort-order="all" sort-separator=" " initialize-with=" " delimiter=", " delimiter-precedes-last="never"/>
+      <et-al font-style="italic"/>
       <substitute>
         <names variable="editor">
           <name name-as-sort-order="all" sort-separator=" " initialize-with=" " delimiter=", " delimiter-precedes-last="never"/>
+          <et-al font-style="italic"/>
         </names>
         <names variable="translator">
           <name name-as-sort-order="all" sort-separator=" " initialize-with=" " delimiter=", " delimiter-precedes-last="never"/>
+          <et-al font-style="italic"/>
         </names>
         <text variable="title"/>
       </substitute>
@@ -39,14 +46,12 @@
 
   <macro name="author-cite">
     <names variable="author">
-      <name form="short" and="text" delimiter=", " delimiter-precedes-last="never" initialize-with=" ">
-        <et-al font-style="italic"/>
-      </name>
+      <name form="short" and="text" delimiter=", " delimiter-precedes-last="never" initialize-with=" "/>
+      <et-al font-style="italic"/>
       <substitute>
         <names variable="editor">
-          <name form="short" and="text" delimiter=", " delimiter-precedes-last="never" initialize-with=" ">
-        <et-al font-style="italic"/>
-      </name>
+          <name form="short" and="text" delimiter=", " delimiter-precedes-last="never" initialize-with=" "/>
+          <et-al font-style="italic"/>
         </names>
         <text variable="title" form="short"/>
       </substitute>
@@ -108,6 +113,7 @@
   <macro name="editor-in-book">
     <names variable="editor">
       <name name-as-sort-order="all" sort-separator=" " initialize-with=" " delimiter=", " delimiter-precedes-last="never"/>
+      <et-al font-style="italic"/>
       <label form="short" prefix=", " suffix="." text-case="lowercase"/>
     </names>
   </macro>
