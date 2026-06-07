@@ -90,7 +90,7 @@
 
   <macro name="journal-container">
     <group suffix=".">
-      <text variable="container-title"/>
+      <text variable="container-title" font-style="italic"/>
       <text variable="volume" prefix=", "/>
       <choose>
         <if variable="page">
