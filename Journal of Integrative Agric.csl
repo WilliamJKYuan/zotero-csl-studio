@@ -152,6 +152,14 @@
     </choose>
   </macro>
 
+  <macro name="language-note">
+    <choose>
+      <if variable="language">
+        <text variable="language" prefix=" (" suffix=")"/>
+      </if>
+    </choose>
+  </macro>
+
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-givenname="true" givenname-disambiguation-rule="primary-name-with-initials">
     <sort>
       <key macro="year-cite"/>
@@ -261,6 +269,7 @@
           <text macro="doi-or-url" suffix="."/>
         </else>
       </choose>
+      <text macro="language-note"/>
     </layout>
   </bibliography>
 </style>
