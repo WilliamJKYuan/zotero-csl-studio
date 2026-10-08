@@ -261,6 +261,7 @@
           <text macro="doi-or-url" suffix="."/>
         </else>
       </choose>
+      <text variable="annote" prefix=" (" suffix=")"/>
     </layout>
   </bibliography>
 </style>
