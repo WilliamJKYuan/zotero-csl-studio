@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+  <info>
+    <title>Insect Science (custom)</title>
+    <id>https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Insect_Science</id>
+    <link href="https://raw.githubusercontent.com/WilliamJKYuan/zotero-csl-studio/refs/heads/main/Insect_Science" rel="self"/>
+    <author>
+      <name>WilliamYuan</name>
+      <webpage>https://github.com/WilliamJKYuan</webpage>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="biology"/>
+    <summary>Customized style for the journal Insect Science based on its Harvard-variant guidelines and recent Insect Science reference examples.</summary>
+    <updated>2026-04-14T12:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <locale>
+    <terms>
+      <term name="accessed">accessed</term>
+      <term name="no date" form="short">s.d.</term>
+    </terms>
+  </locale>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter-precedes-last="never" initialize-with="." name-as-sort-order="all"/>
+      <label form="short" prefix=" (" suffix=")"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="symbol" delimiter-precedes-last="never" initialize-with="."/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="editor-chapter">
+    <names variable="editor" prefix="(" suffix=")">
+      <label form="short" suffix=" "/>
+      <name and="symbol" delimiter-precedes-last="never" initialize-with="."/>
+    </names>
+  </macro>
+
+  <macro name="year-date">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
+    <sort>
+      <key macro="author-short"/>
+      <key macro="year-date"/>
+    </sort>
+    <layout delimiter="; " prefix="(" suffix=")">
+      <group delimiter=", ">
+        <text macro="author-short"/>
+        <text macro="year-date"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="true" et-al-min="7" et-al-use-first="6">
+    <sort>
+      <key macro="author"/>
+      <key macro="year-date"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <text macro="author" suffix=" "/>
+      <text macro="year-date" prefix="(" suffix=") "/>
+      <choose>
+        <if type="article-journal article-magazine article-newspaper" match="any">
+          <group delimiter=". ">
+            <text variable="title"/>
+            <group delimiter=", ">
+              <text variable="container-title" font-style="italic"/>
+              <text variable="volume"/>
+              <choose>
+                <if variable="page">
+                  <text variable="page"/>
+                </if>
+                <else>
+                  <text variable="DOI" prefix="DOI: "/>
+                </else>
+              </choose>
+            </group>
+          </group>
+        </if>
+        
+        <else-if type="book">
+          <group delimiter=". ">
+            <text variable="title" font-style="italic"/>
+            <text macro="publisher"/>
+            <group delimiter=" ">
+              <label variable="page" form="short"/>
+              <text variable="page"/>
+            </group>
+          </group>
+        </else-if>
+        
+        <else-if type="chapter paper-conference" match="any">
+          <group delimiter=". ">
+            <text variable="title"/>
+            <group delimiter=", ">
+              <group delimiter=" ">
+                <text variable="container-title" font-style="italic"/>
+                <text macro="editor-chapter"/>
+              </group>
+              <group delimiter=" ">
+                <label variable="page" form="short"/>
+                <text variable="page"/>
+              </group>
+            </group>
+            <text macro="publisher"/>
+          </group>
+        </else-if>
+        
+        <else>
+          <group delimiter=". ">
+            <text variable="title"/>
+            <text variable="container-title" font-style="italic"/>
+            <text macro="publisher"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
